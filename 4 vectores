@@ -1,20 +1,20 @@
 lista_vacia = []
 lista_elementos = [1, 2, 3, 4, 5, 6]
 
-longitud_lista = len(lista_elementos)
+ longitud_lista = len(lista_elementos)
 
-primer_elemento = lista_elementos[0]
-elemento_central = lista_elementos[len(lista_elementos) // 2]
-ultimo_elemento = lista_elementos[-1]
+        primer_elemento = lista_elementos[0]
+        elemento_central = lista_elementos[len(lista_elementos) // 2]
+        ultimo_elemento = lista_elementos[-1]
 
-tipos_datos_mezclados = ['Camilo', 30, 1.75, 'Soltero', 'EscallonVilla']
+ tipos_datos_mezclados = ['Camilo', 30, 1.75, 'Soltero', 'EscallonVilla']
 
-it_companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+ it_companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
 
-it_companies.append('Twitter')
+ it_companies.append('Twitter')
 
-empresa_a_buscar = 'Netflix'
-existe_empresa = empresa_a_buscar in it_companies
+    empresa_a_buscar = 'Netflix'
+    existe_empresa = empresa_a_buscar in it_companies
 
 it_companies.sort()
 
