@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Vectores {
+    public static void main(String[] args) {
+      ArrayList listaVacia = new ArrayList<>();
+
+ArrayList lista = new ArrayList<>(Arrays.asList("Moto", "Computador", "Sillas", "Mesas", "Carro", "Teclado"));
+
+System.out.println("Longitud de la lista: " + lista.size());
+
+System.out.println("Primer elemento: " + lista.get(0));
+System.out.println("Elemento central: " + lista.get(lista.size() / 2));
+System.out.println("Último elemento: " + lista.get(lista.size() - 1));
+
+ArrayList tipos_datos_mezclados = new ArrayList<>(Arrays.asList("CamiloLara", 25, 1.75, "Casado", "Escallonvilla"));
+
+ArrayList it_companies = new ArrayList<>(Arrays.asList("Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"));
+
+it_companies.add("Twitter");
+
+System.out.println("¿Contiene Microsoft? " + it_companies.contains("Microsoft"));
+
+Collections.sort(it_companies);
+System.out.println("Lista ordenada: " + it_companies);
+
+Collections.reverse(it_companies);
+System.out.println("Lista en orden descendente: " + it_companies);
+
+it_companies.remove(0);
+System.out.println("Lista después de eliminar la primera empresa: " + it_companies);
+
+it_companies.clear();
+System.out.println("Lista después de eliminar todas las empresas: " + it_companies);
+}
+}
