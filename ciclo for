@@ -1,0 +1,13 @@
+vuelo = {
+    "Aerolinea": "Avianca",
+    "Vuelo": "AV1420",
+    "Tipo_Maleta": ['Cabina','Mano','Bodega']
+}
+
+print("Valores_Del_Diccionario")
+for key, value in vuelo.items():
+    print(f"{key}: {value}")
+    
+print("\nTipos de maleta disponibles:")
+for tipo in vuelo["Tipo_Maleta"]:
+    print(tipo)
