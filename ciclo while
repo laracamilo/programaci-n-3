@@ -1,0 +1,30 @@
+def mostrar_menu():
+    def mostrar_menu():
+     print("1. Personas")
+     print("2. Vehiculos")
+     print("3. Universidades")
+     print("4. Notas")
+     print("5. Salir")
+
+def seleccionar_opcion():
+    opcion = input("Selecciona una opción (1-5): ")
+    return opcion
+
+def main():
+    while True:
+        mostrar_menu()
+        opcion = seleccionar_opcion()
+        if opcion == '1':
+            print("Hola, has presionado la opción Personas.")
+        elif opcion == '2':
+            print("Hola, has presionado la opción Vehiculos.")
+        elif opcion == '3':
+            print("Hola, has presionado la opción Universidades.")
+        elif opcion == '4':
+            print("Hola, has presionado la opción Notas.")
+        elif opcion == '5':
+            print("Saliendo del programa")
+            break
+
+if __name__ == "__main__":
+    main()
