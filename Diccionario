@@ -1,0 +1,36 @@
+perro = {}
+
+perro['nombre'] = 'Luna'
+perro['color'] = 'Negra'
+perro['raza'] = 'Pitbull'
+perro['patas'] = 4
+perro['edad'] = 2
+
+estudiante = {
+    'nombre': 'Camilo',
+    'apellido': 'Lara',
+    'sexo': 'Masculino',
+    'edad': 21,
+    'estado civil': 'Comprometido',
+    'habilidades': ['musica', 'futbol'],
+    'país': 'Colombia',
+    'ciudad': 'Cartagena',
+    'dirección': 'Barrio escallonvilla 51-40'
+}
+
+longitud_estudiante = len(estudiante)
+
+habilidades = estudiante['habilidades']
+tipo_habilidades = type(habilidades)
+
+estudiante['habilidades'].extend(['Planificacion', 'Organizacion'])
+
+claves = list(estudiante.keys())
+
+valores = list(estudiante.values())
+
+lista_tuplas = list(estudiante.items())
+
+del estudiante['estado civil']
+
+del perro
