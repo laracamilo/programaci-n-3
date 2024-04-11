@@ -1,0 +1,50 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+
+public class DiccionariosJava {
+    public static void main(String[] args) {
+        
+        Map<String, Object> perro = new HashMap<>();
+        perro.put("nombre", "Luna");
+        perro.put("color", "Negra");
+        perro.put("raza", "Pitbull");
+        perro.put("patas", 4);
+        perro.put("edad", 2);
+        
+        Map<String, Object> estudiante = new HashMap<>();
+        estudiante.put("nombre", "Camilo");
+        estudiante.put("apellido", "Lara");
+        estudiante.put("sexo", "Masculino");
+        estudiante.put("edad", 21);
+        estudiante.put("estado civil", "Comprometido");
+        estudiante.put("habilidades", new ArrayList<>(List.of("musica", "futbol")));
+        estudiante.put("país", "Colombia");
+        estudiante.put("ciudad", "Cartagena");
+        estudiante.put("dirección", "Barrio escallonvilla 51-40");
+    
+        int longitudEstudiante = estudiante.size();
+        System.out.println("Longitud del diccionario del estudiante: " + longitudEstudiante);
+     
+        List<String> habilidades = (List<String>) estudiante.get("habilidades");
+        System.out.println("Tipo de datos de habilidades: " + habilidades.getClass().getSimpleName());
+
+        habilidades.addAll(List.of("Planificacion", "Organizacion"));
+      
+        List<String> claves = new ArrayList<>(estudiante.keySet());
+        System.out.println("Claves del diccionario: " + claves);
+
+        List<Object> valores = new ArrayList<>(estudiante.values());
+        System.out.println("Valores del diccionario: " + valores);
+
+        List<Map.Entry<String, Object>> listaTuplas = new ArrayList<>(estudiante.entrySet());
+        System.out.println("Diccionario como lista de tuplas: " + listaTuplas);
+
+        estudiante.remove("estado civil");
+        System.out.println("Diccionario después de eliminar 'estado civil': " + estudiante);
+          
+        perro.clear(); // En Java no se puede eliminar una variable, pero se puede limpiar su contenido.
+        System.out.println("Diccionario perro después de borrar: " + perro);
+    }
+}
