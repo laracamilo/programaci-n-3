@@ -1,0 +1,39 @@
+import tkinter as tk
+
+ventana = tk.Tk()
+
+ventana.title("LARA DJ")
+
+ventana.geometry("1024x960")
+
+lnombre = tk.Label(ventana,text="Nombre:")
+lnombre.grid(row=0,column=0, padx=5, pady=0)
+entry_nombre=tk.Entry(ventana)
+entry_nombre.grid(row=0, column=1, padx=10, pady=0)
+
+lapellido = tk.Label(ventana,text="Apellido:")
+lapellido.grid(row=1,column=0, padx=10, pady=5)
+entry_apellido=tk.Entry(ventana)
+entry_apellido.grid(row=1, column=1, padx=10, pady=0)
+
+lsexo =tk.Label(ventana,text="Sexo")
+lsexo.grid(row=3,column=0, padx=7, pady=5)
+radio_masculino= tk.Radiobutton(ventana,text="masculino",value="masculino",state="normal")
+radio_femenino= tk.Radiobutton(ventana,text="femenino",value="femenino",state="normal")
+radio_Ns= tk.Radiobutton(ventana,text="Na",value="Na",state="normal")
+radio_masculino.grid(row=3,column=2, padx=10, pady=5)
+radio_femenino.grid(row=3,column=3, padx=10, pady=5)
+radio_Ns.grid(row=3,column=4, padx=10, pady=5)
+
+tk.Label(ventana, text="Ciudad:").grid(row=3, column=0)
+ciudades = ["Cartagena", "Medellin", "Bogota"] 
+var_ciudad = tk.StringVar()
+var_ciudad.set(ciudades[0])
+dropdown_ciudad = tk.OptionMenu(ventana, var_ciudad, *ciudades)
+dropdown_ciudad.grid(row=3, column=1)
+
+boton_registro = tk.Button(ventana, text="Registrar")
+boton_registro.grid(row=4, column=0, columnspan=2)
+
+
+ventana.mainloop()
