@@ -1,0 +1,45 @@
+import java.util.Stack;
+
+public class pilas {
+    public static void main(String[] args) {
+        Stack<Integer> pila1 = new Stack<>();
+        Stack<Integer> pila2 = new Stack<>();
+
+        pila1.push(10);
+        pila1.push(20);
+        pila1.push(130);
+        pila1.push(11);
+        pila1.push(255);
+        pila1.push(30);
+
+        int numeroMayor = extraerNumeroMayor(pila1);
+        pila2.push(numeroMayor);
+
+        System.out.println("Pila 1: " + pila1);
+        System.out.println("Pila 2: " + pila2);
+    }
+    public static int extraerNumeroMayor(Stack<Integer> pila) {
+        int mayor = Integer.MIN_VALUE;
+        Stack<Integer> pilaTemporal = new Stack<>();
+
+        while (!pila.isEmpty()) {
+            int actual = pila.pop();
+            if (actual > mayor) {
+                mayor = actual;
+            }
+            pilaTemporal.push(actual);
+        }
+        
+        boolean mayorEncontrado = false;
+        while (!pilaTemporal.isEmpty()) {
+            int actual = pilaTemporal.pop();
+            if (actual != mayor || mayorEncontrado) {
+                pila.push(actual);
+            } else {
+                mayorEncontrado = true; 
+            }
+        }
+
+        return mayor;
+    }
+}
