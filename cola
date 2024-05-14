@@ -1,0 +1,103 @@
+class Nodo {
+    String dato;
+    Nodo siguiente;
+
+    public Nodo(String dato) {
+        this.dato = dato;
+        this.siguiente = null;
+    }
+}
+
+class Cola {
+    Nodo primero;
+    Nodo ultimo;
+
+    public Cola() {
+        primero = null;
+        ultimo = null;
+    }
+
+    public boolean estaVacia() {
+        return primero == null;
+    }
+
+    public void meter(String persona) {
+        Nodo nuevoNodo = new Nodo(persona);
+        if (estaVacia()) {
+            primero = nuevoNodo;
+        } else {
+            ultimo.siguiente = nuevoNodo;
+        }
+        ultimo = nuevoNodo;
+    }
+
+    public String sacar() {
+        if (estaVacia()) {
+            return null;
+        }
+        String dato = primero.dato;
+        primero = primero.siguiente;
+        if (primero == null) {
+            ultimo = null;
+        }
+        return dato;
+    }
+
+    public void eliminar(String persona) {
+        if (!estaVacia()) {
+            if (primero.dato.equals(persona)) {
+                primero = primero.siguiente;
+            } else {
+                Nodo actual = primero;
+                while (actual.siguiente != null && !actual.siguiente.dato.equals(persona)) {
+                    actual = actual.siguiente;
+                }
+                if (actual.siguiente != null) {
+                    actual.siguiente = actual.siguiente.siguiente;
+                }
+            }
+        }
+    }
+
+    public Cola organizarMujeres() {
+        Cola colaMujeres = new Cola();
+        Nodo actual = primero;
+        Nodo anterior = null;
+        while (actual != null) {
+            if (actual.dato.toLowerCase().startsWith("mujer")) {
+                colaMujeres.meter(actual.dato);
+                if (anterior == null) {
+                    primero = actual.siguiente;
+                } else {
+                    anterior.siguiente = actual.siguiente;
+                }
+                if (actual == ultimo) {
+                    ultimo = anterior;
+                }
+            } else {
+                anterior = actual;
+            }
+            actual = actual.siguiente;
+        }
+        return colaMujeres;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cola cola = new Cola();
+        cola.meter("Hombre1");
+        cola.meter("Mujer1");
+        cola.meter("Hombre2");
+        cola.meter("Mujer2");
+        cola.meter("Hombre3");
+
+        Cola colaMujeres = cola.organizarMujeres();
+        while (!colaMujeres.estaVacia()) {
+            System.out.println(colaMujeres.sacar());
+        }
+        while (!cola.estaVacia()) {
+            System.out.println(cola.sacar());
+        }
+    }
+}
